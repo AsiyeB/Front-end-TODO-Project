@@ -1,0 +1,19 @@
+<template>
+  <li id="id${task.taskid}">
+    <span class="ils">
+      <input if.bind="!updateClick" type="checkbox" checked.bind="task.checked" change.trigger="checkChanged()"
+        id.bind="task.taskid">
+      <label for.bind="task.taskid" if.bind="!updateClick"></label>
+      <span class="task" if.bind="!updateClick">
+        ${task.description}
+      </span>
+      <input class="updateinput" if.bind="updateClick" value.bind="newtaskName" type="text" id="ntname"
+        name="newtaskname">
+      <label if.bind="updateClick" class="taskupdate" click.delegate="updateDescription(task.taskid)"></label>
+      <img src.bind="task.image" if.bind="!updateClick">
+    </span>
+    <label if.bind="!updateClick" class="update" click.delegate="update()"></label>
+    <label if.bind="!updateClick" class="delete" click.delegate="deleteTasks(task.taskid)"></label>
+
+  </li>
+</template>

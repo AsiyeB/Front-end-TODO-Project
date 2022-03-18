@@ -1,0 +1,38 @@
+<!-- import './../../assets/scss/style.scss'; -->
+<template>
+  <div style="display:flex">
+    <div>
+      <form submit.delegate="addMember()">
+        <div style="color:red; font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 14px;">${my_message}</div>
+        <div class="form-group">
+          <label for="nameBoard">User Name :</label>
+          <input type="text" value.bind="userName & validate" style="width:80%;" id="fname" name="userName"
+            placeholder="user name .."></br>
+          <!-- </div> -->
+          <!-- <div  class="form-group ">
+                <label for="nameBoard">Last Name :</label>
+                <input type="text" value.bind="lastName & validate" style="width:80%;" id="lname" name="lastName"  placeholder="last name .."></br>
+            </div> -->
+          <!-- <div class="form-group "> -->
+          <button type="submit" style="width:40px;border-radius: 50%;" class="buttonDesign"> +
+          </button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <div>
+        <h3>Members</h3>
+        <ul type=none style=" height: 100px;overflow: auto;margin-left: 0px;">
+          <li repeat.for="member of members">
+            <label class="delete" click.delegate="deleteMember(member)">
+              ${member.userName}
+            </label>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+</template>

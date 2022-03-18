@@ -1,0 +1,20 @@
+<template>
+        <div class="board  ${board.done}">
+            <h>${board.name}</h>
+            <p class="Done">Done!</p>
+            <div class="content">
+                <ul class="ul">
+                    <li>${board.totalTodos} todos (${board.totalTasks} tasks)</li>
+                    <li>${board.remainTask} remaining tasks</li>
+                    <li>${board.username}(owner)</li>
+                </ul>
+                <div class="dots">
+                    <!-- <memberImg  repeat.for="image of board.memberList" image.bind="image"></memberImg> -->
+                    <img  repeat.for="image of board.memberList" src.bind="image" class="dot"></img>
+                    <!-- <img class="dot3" src="../image/img3.png"></img>
+                    <img class="dot4" src="../image/img4.png"></img> --> 
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

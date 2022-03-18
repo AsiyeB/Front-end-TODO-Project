@@ -1,0 +1,33 @@
+import './../../assets/scss/style.scss';
+import './member'
+
+<template>
+    <require from="./board"></require>
+    <board repeat.for="board of boardList" class="boardss" board.bind ="board" delete-boards.call="deleteBoards(board.boardid)" ></board>
+    <button type="button" style="width: 100%;margin-top: 10px;border: none;" class="buttonDesign"click.delegate="form()"> + </button> 
+    
+    
+    <form submit.delegate="submit()" if.bind="clickAdd" >
+      <div class="form-group">
+        <label for="nameBoard">Board Name :</label>
+        <input value.bind="boardName & validate" type="text" id="bname" name="boardName" placeholder="Your board name ..">
+      </br>
+      </div>
+
+      <!-- <div class="form-group">
+          <label for="ownerFname">  Owner First Name :</label>
+          <input value.bind="ownerFname & validate" type="text" id="oname" name="ownerName" placeholder="Your owner first name ..">
+      </br>
+      </div> 
+      <div class="form-group">
+        <label for="ownerLname">  Owner Last Name :</label>
+        <input value.bind="ownerLname & validate" type="text" id="oname" name="ownerName" placeholder="Your owner last name ..">
+    </br>
+    </div>   -->
+     <div >
+        <button type="submit" style="border: none;margin-left: 10px;"class="buttonDesign"> submit</button> 
+     </div>
+        
+    </form>
+</template>
+  

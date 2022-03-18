@@ -1,0 +1,29 @@
+@import "./colors";
+.body {
+  padding: 10px;
+  border: 1px solid $hover;
+  background-color: $task;
+  border-radius: 10px;
+  h3 {
+    color: $ordinary;
+    // font-family: "Comic Sans MS", cursive, sans-serif;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .btn {
+    // flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      cursor: pointer;
+      width: 95%;
+      border-radius: 5px;
+      padding: 6px;
+      color: white;
+      border: none;
+      background-color: $ordinary;
+      margin: 0px 3px;
+    }
+  }
+}

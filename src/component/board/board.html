@@ -1,0 +1,23 @@
+<template>
+  <require from="./member"></require>
+  <label class="delete" click.delegate="deleteBoards(board.boardid)"></label>
+  <div class="boardProp">
+    <h3 class="nameboard" if.bind="!updateClick" style="display: inline-block"> ${board.name}
+      <label if.bind="!updateClick" class="update" click.delegate="update()"></label>
+    </h3>
+    <div class="updatediv">
+      <input class="updateinput" if.bind="updateClick" value.bind="newboardName" type="text" id="nbname"
+        name="newboardname"
+        style="font-size: 15px; font-weight: bold; font-family: 'Comic Sans MS', cursive, sans-serif;">
+      <label if.bind="updateClick" class="boardupdate" click.delegate="updateBoard(board.boardid)"></label>
+    </div>
+
+    <div>
+      <h3>Owner</h3>
+      <span style="margin-left:35px;">${board.username} </span>
+    </div>
+  </div>
+  <div class="boardProp" style="background-color: white">
+    <member member.bind=board></member>
+  </div>
+</template>

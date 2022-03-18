@@ -1,0 +1,148 @@
+<template>
+    <div class="total">
+        <div class="partToDo">
+            <div class="container-login" if.bind="!flag">
+                <div class="background">
+                    <h6 class="login-title">signin</h6>
+                </div>
+                <div class="form">
+                    <h3 if.bind="!errorNotFound" class="error-notFound">Username or Password is incorrect</h3>
+                    <div class="user-in">
+                        <span class="label-input">Username</span>
+                        <div class="form-group">
+                            <input value.bind="userName & validate" class="input " type="text"
+                                placeholder="Enter username">
+                        </div>
+                    </div>
+                    <div class="user-in">
+                        <span class="label-input">Password</span>
+                        <div class="form-group">
+                            <input value.bind="passWord & validate" class="input " type="password"
+                                placeholder="Enter password">
+                        </div>
+                    </div>
+                    <!-- <div class="remember-forget-butt"> -->
+                    <div class="remember-forget">
+                        <div class="remember-me">
+                            <input class="checkbox" type="checkbox">
+                            <label class="label-checkbox">
+                                Remember me
+                            </label>
+                        </div>
+                        <span class="label-forget" click.delegate="submit2()">
+                            Forgot Password?
+                        </span>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="submit" click.delegate="submit()">Log in</button>
+                        <!-- <a href='/#/signup'> -->
+                        <!-- signUp -->
+                        <button type="submit" click.delegate="signUp()">Sign up</button>
+                        <!-- </a> -->
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="container-signup" if.bind="flag">
+                <div class="backgroundContainer">
+                    <h6 class="title">signup</h6>
+                </div>
+                <div class="form-input">
+                    <h3 class="title-form">Welcome To Part ToDo</h3>
+                    <div class="inputs">
+                        <div class="form-group" validation-errors.bind="firstNameErrors">
+                            <span class="label-input popup">First Name
+                                <span class="popuptext" id="myPopup1">
+                                    Enter 3 character or more, including letters only
+                                </span>
+                            </span>
+                            <input value.bind="firstname & validate"
+                                class="input ${firstNameErrors.length ?'errorBlank': '' }" type="text"
+                                placeholder="Enter Firstname" id="firstname">
+                            <!-- <img src="./../image/help.jpg" class="input_img"> -->
+                        </div>
+                        <div class="form-group" validation-errors.bind="lastNameErrors">
+                            <span class="label-input popup">Last Name
+                                <span class="popuptext" id="myPopup2">
+                                    Enter 3 character or more, including letters only without any spaces
+                                </span>
+                            </span>
+                            <input value.bind="lastname & validate"
+                                class="input ${lastNameErrors.length ?'errorBlank': '' }" type="text"
+                                placeholder="Enter Lastname" id="lastname">
+                            <!-- <img src="./../image/help.jpg" class="input_img"> -->
+                        </div>
+                        <div class="form-group" validation-errors.bind="userNameErrors">
+                            <span class="label-input popup">Username
+                                <span class="popuptext" id="myPopup3">
+                                    Enter 5 to 12 characters, including letters & numbers
+                                </span>
+                            </span>
+
+                            <input value.bind="user & validate"
+                                class="input ${userNameErrors.length ?'errorBlank': '' }" type="text"
+                                placeholder="Enter username" id="user">
+                        </div>
+                        <div class="form-group" validation-errors.bind="passWordErrors">
+                            <span class="label-input popup">Password
+                                <span class="popuptext" id="myPopup4">
+                                    Enter 8 characters or more, including at least one uppercase, one lowercase, one
+                                    number and one special character[@ $ ! % * ? &]
+                                </span>
+                            </span>
+                            <input value.bind="pass & validate"
+                                class="input ${passWordErrors.length ?'errorBlank': '' }" type="password"
+                                placeholder="Enter Password" id="pass">
+                        </div>
+                        <div class="form-group" validation-errors.bind="ConfirmpassWordErrors">
+                            <span class="label-input">Confirm Password</span>
+                            <input value.bind="confirmPass & validate"
+                                class="input ${ConfirmpassWordErrors.length ?'errorBlank': '' }" type="password"
+                                placeholder="Enter Password" id="confirmpass">
+                            <span if.bind="errorequal" class="${errorequal ?'errorequal': '' }">password is not
+                                equal!</span>
+                        </div>
+                        <div class="form-group" validation-errors.bind="urlErrors">
+                            <span class="label-input">Image URL</span>
+                            <input value.bind="url & validate" class="input ${urlErrors.length ?'errorBlank': '' }"
+                                type="text" placeholder="Enter URL" id="imageurl">
+                        </div>
+<!-- 
+                        <div class="select-sim" id="select-color">
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="color" value="" id="color-" checked>
+                                    <label for="color-">
+                                        <img src="./../image/img1.png" alt="" /> Select an option
+                                    </label>
+                                </div>
+                                <div class="option">
+                                     <input type="radio" name="color" value="red" id="color-red"> -->
+                                    <!-- <label for="color-red">
+                                        <img src="./../image/img1.png" alt="" /> Red
+                                    </label>
+                                </div>
+                                <div class="option"> -->
+                                    <!-- <input type="radio" name="color" value="green" id="color-green" > -->
+                                    <!-- <label for="color-green">
+                                        <img src="./../image/img1.png" alt="" /> Green
+                                    </label>
+                                </div>
+                                <div class="option"> -->
+                                    <!-- <input type="radio" name="color" value="blue" id="color-blue" > -->
+                                    <!-- <label for="color-blue">
+                                        <img src="./../image/img1.png" alt="" /> Blue
+                                    </label>
+                                </div>
+                            </div>
+                        </div>  -->
+                        <button class="signup" type="submit" click.delegate="submit2()">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</template>

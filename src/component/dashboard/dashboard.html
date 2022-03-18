@@ -1,0 +1,17 @@
+<template>
+  <require from="./board-item"></require>
+  <div class="container">
+    <div class="description-box">
+      <ul class="ul">
+        <li>Select a board to see its todos</li>
+        <li>Manage boards in borads tab</li>
+        <li>Add members to your own boards</li>
+        <li>whenenver you want in board tabs</li>
+        <li>Try to do all todos</li>
+      </ul>
+    </div>
+    <div class="boards" if.bind="boardList && boardList.length>0">
+      <board-item repeat.for="board of boardList" board.bind="board" click.delegate = "changeView(board.boardid)"></board-item>
+      </div>
+  </div>
+</template>

@@ -1,0 +1,151 @@
+@import "./media_query";
+@import "./colors";
+body {
+  background-color: $body;
+  //font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  .container-login {
+    overflow: hidden;
+    display: flex;
+    // flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    width: 100%;
+    border-radius: 15px;
+    background: #ebeeef;
+    // margin-left: 15%;
+    .background {
+      width: 100%;
+      background-image: url("back4.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 340px;
+      background-position: top;
+      border-radius: 0px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      opacity: 2.2;
+      .login-title {
+        font-family: Poppins-Bold;
+        font-size: 40px;
+        text-transform: uppercase;
+        float: unset;
+        color: black;
+        margin-top: 115px;
+        margin-left: 8%;
+        @include breakpoint(small) {
+          color: white;
+        }
+      }
+    }
+    .form {
+      padding: 20px;
+      width: 100%;
+      background-color: white;
+      border-radius: 0px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      .error-notFound{
+        // visibility: hidden;
+        font-size: 20px;
+        color: #D8000C;
+        margin: 0;
+        text-align: center; 
+        font-family: "Times New Roman", Times, serif;
+      }
+      .user-in {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        @include breakpoint(xsmall) {
+          flex-direction: column;
+        }
+        .label-input {
+          color: $add_todo;
+          padding: 20px;
+          font: bold;
+          // width: 40%;
+          font-size: 20px;
+          @include breakpoint(small) {
+            // background-color: aqua;
+            flex-direction: column;
+          }
+          @include breakpoint(xsmall) {
+            // background-color: firebrick;
+            font-size: 18px;
+            flex-direction: column;
+          }
+          @include breakpoint(xxsmall) {
+            // background-color: forestgreen;
+            font-size: 16px;
+            flex-direction: column;
+          }
+        }
+        .form-group {
+          @include breakpoint(xsmall) {
+            width: 100%;
+          }
+          width: 60%;
+          .input {
+            border-radius: 0px;
+            height: 30px;
+            padding: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+          .validation-message {
+            color: red;
+          }
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .remember-forget {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 10px;
+        .remember-me {
+          .checkbox {
+            margin-left: 25px;
+            @include breakpoint(xsmall) {
+              margin: 0px;
+            }
+          }
+          .label-checkbox {
+            font-size: 17px;
+          }
+        }
+        .label-forget {
+          box-sizing: border-box;
+          font-size: 17px;
+        }
+      }
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        button {
+          padding: 10px;
+          margin: 10px;
+          border: 0px;
+          width: 100px;
+          box-sizing: border-box;
+          background-color: $all_done;
+          color: white;
+          @include breakpoint(xxsmall) {
+            width: 75px;
+          }
+        }
+        button:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

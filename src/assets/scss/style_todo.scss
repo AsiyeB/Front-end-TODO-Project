@@ -1,0 +1,593 @@
+@import "./media_query";
+@import "./colors";
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+//@import "./tab";
+body {
+  background-color: $body;
+  //font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  .total {
+    display: flex;
+    justify-content: center;
+
+    //align-items: center;
+    //width:100%;
+
+    .partToDo {
+      background-color: $container;
+      border: 1px solid white;
+      border-radius: 20px;
+      position: absolute;
+      padding: 30px;
+      width: 90%;
+
+      .title {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        color: white;
+      }
+
+      .tab_board {
+        overflow: hidden;
+        // display: flex;
+        // flex-wrap: wrap;
+        background-color: white;
+        border-radius: 10px;
+        align-items: center;
+        // justify-content: flex-start;
+        .butts {
+          button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s;
+            padding: 0px 16px;
+            height: 50px;
+            width: 95px;
+            border-radius: 10px;
+          }
+          button:hover {
+            background-color: $hover;
+            color: white;
+          }
+          .dashboard {
+            background-color: inherit;
+            color: $hover;
+          }
+          .boards {
+            background-color: $hover;
+            color: white;
+          }
+          .todos {
+            background-color: $ordinary;
+            color: white;
+          }
+        }
+        button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          transition: 0.3s;
+          padding: 0px 16px;
+          height: 50px;
+          width: 90px;
+          border-radius: 10px;
+        }
+        button:hover {
+          background-color: $hover;
+          color: white;
+        }
+      }
+
+      .container_todo {
+        padding-top: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $body;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        //padding:15px 15px 0px 15px ;
+        margin: 10px 0px;
+
+        .info {
+          display: flex;
+
+          background-color: white;
+          border-radius: 10px;
+          //width:100%;
+          padding: 5px 5px 5px 0px;
+          margin: 0px 20px 10px 20px;
+
+          @include breakpoint(small) {
+            font-size: 14px;
+          }
+
+          @include breakpoint(xsmall) {
+            font-size: 12px;
+          }
+
+          @include breakpoint(xxsmall) {
+            font-size: 10px;
+          }
+
+          .board_info {
+            flex-grow: 1;
+            padding: 10px 0px 10px 10px;
+
+            @include breakpoint(xsmall) {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+          .select_board {
+            width: 70px;
+            margin-right: 10px;
+            border-radius: 10px;
+            background-color: $select_board;
+            color: white;
+          }
+        }
+        /*.total_todos {
+          border-radius: 10px;
+          margin: 10px;
+          background-color: white;
+          border: 1px solid black;*/
+
+        .total_todos {
+          background-color: white;
+          border-radius: 10px;
+          margin: 0px 20px 10px 20px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+
+          .todo {
+            //position: relative;
+            border-color: $body;
+            border-width: 1px;
+            border-style: solid;
+            background-color: $body;
+            float: left;
+            width: 220px;
+            height: 280px;
+            margin: 30px 15px;
+            padding: 10px;
+            border-radius: 20px;
+            //display: flex;
+            // flex-wrap: wrap;
+
+            @include breakpoint(small) {
+              margin: 20px 10px;
+              font-size: 14px;
+            }
+
+            @include breakpoint(xsmall) {
+              margin: 10px 5px;
+              font-size: 12px;
+            }
+
+            .header {
+              color: white;
+              text-align: center;
+              padding: 5px 0px 5px 0px;
+              //border-color:black;
+              //border-width: 1px;
+              //border-style: solid;
+              background-color: $ordinary;
+              margin-bottom: 10px;
+              border-radius: 10px;
+              font-family: "Comic Sans MS", cursive, sans-serif;
+              font-size: 16px;
+              .delete:hover {
+                cursor: pointer;
+              }
+              .delete {
+                text-align: center;
+                padding-left: 3px;
+                align-items: center;
+                padding-right: 3px;
+                float: right;
+              }
+              .delete:before {
+                font-family: FontAwesome;
+                font-size: 20px;
+                content: "\f014";
+                color: white;
+              }
+              ///////////////
+              .update:hover {
+                cursor: pointer;
+              }
+              .update {
+                text-align: center;
+                padding-left: 3px;
+                align-items: center;
+                padding-right: 3px;
+                padding-top: 2px;
+                float: right;
+              }
+              .update:before {
+                font-family: FontAwesome;
+                font-size: 20px;
+                content: "\f044";
+                color: white;
+              }
+              .updateinput {
+                width: 80%;
+                background-color: $ordinary;
+                color: white;
+                border: none;
+              }
+              .todoupdate:hover {
+                cursor: pointer;
+              }
+              .todoupdate {
+                width: 10%;
+                text-align: center;
+                padding-left: 3px;
+                align-items: center;
+                padding-right: 3px;
+                padding-top: 2px;
+                float: right;
+              }
+              .todoupdate:before {
+                font-family: FontAwesome;
+                font-size: 20px;
+                content: "\f00c";
+                color: white;
+              }
+            }
+            /////////////////
+            .all_done {
+              background-color: $all_done;
+              background-color: #a6a6a6;
+              text-decoration: line-through;
+            }
+            .todo_container {
+              padding: 5px 5px 0px 5px;
+              //margin:0px 0px 3px 0px;
+              //margin:5px 3px 3px 3px;
+              background-color: white;
+              border-radius: 8px;
+              height: 220px;
+              overflow: auto;
+              .add_task {
+                display: flex;
+                padding: 5px;
+                background-color: $task;
+                border-radius: 15px;
+                border: 1px solid $body;
+
+                .textInput {
+                  width: 80%;
+                  height: 25px;
+                  margin: 0 auto;
+                  border: 2px solid $body;
+                  //border:solid 1px #ccc;
+                  //border-radius: 10px;
+                  border-radius: 0px;
+                  border-top-left-radius: 8px;
+                  border-bottom-left-radius: 8px;
+                  flex-grow: 1;
+                }
+                .textInput::placeholder {
+                  font-size: 12px;
+                  font-family: "Comic Sans MS", cursive, sans-serif;
+                }
+                .empty-error {
+                  border-color: rgb(233, 19, 37);
+                }
+                .empty-error::placeholder {
+                  color: rgb(233, 19, 37);
+                  opacity: 0.7;
+                }
+                // .empty-error::placeholder{
+
+                // }
+
+                .add_btn {
+                  background: $add_btn;
+                  font-weight: bold;
+                  color: white;
+                  margin: 0 auto;
+                  height: 24px;
+                  cursor: pointer;
+                  width: 20%;
+                  //border:solid 1px;
+                  //border-radius: 8px;
+                  border-top-right-radius: 8px;
+                  border-bottom-right-radius: 8px;
+                  padding: 3px;
+                  padding-bottom: 4px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 14px;
+                  font-family: "Comic Sans MS", cursive, sans-serif;
+                }
+
+                /*.add_btn:hover {
+                        background: grey;
+                    }*/
+              }
+
+              ul {
+                padding: 0px;
+                list-style-type: none;
+                li {
+                  display: flex;
+                  padding-top: 3px;
+                  padding-bottom: 3px;
+                  border-radius: 10px;
+                  border-color: $body;
+                  background-color: $task;
+                  border-width: 1px;
+                  border-style: solid;
+                  margin: 3px 0px 3px 0px;
+                  align-items: center;
+                  // justify-content: space-around;
+
+                  .delete:hover {
+                    cursor: pointer;
+                  }
+                  .delete {
+                    padding-left: 3px;
+                    align-items: center;
+                    padding-right: 3px;
+                  }
+                  .delete:before {
+                    font-family: FontAwesome;
+                    font-size: 22px;
+                    content: "\f05c";
+                    color: grey;
+                  }
+                  .update:hover {
+                    cursor: pointer;
+                  }
+                  .update {
+                    padding-left: 3px;
+                    align-items: center;
+                    // padding-right: 3px;
+                    padding-top: 3px;
+                  }
+                  .update:before {
+                    font-family: FontAwesome;
+                    font-size: 20px;
+                    content: "\f044";
+                    color: grey;
+                  }
+                  .taskupdate:hover {
+                    cursor: pointer;
+                  }
+                  .taskupdate {
+                    width: 10%;
+                    padding-left: 3px;
+                    align-items: center;
+                    padding-right: 3px;
+                  }
+                  .taskupdate:before {
+                    font-family: FontAwesome;
+                    font-size: 20px;
+                    content: "\f00c";
+                    color: $ordinary;
+                  }
+                  .updateinput {
+                    width: 80%;
+                    background-color: #ddd;
+                    color: black;
+                    border: none;
+                  }
+                  .ils {
+                    border-radius: 9px;
+                    border: 1px solid #a6a6a6;
+                    padding: 1px;
+                    margin-left: 1px;
+                    padding-left: 3px;
+                    display: flex;
+                    flex-grow: 1;
+                    align-items: center;
+                    .task {
+                      flex-grow: 1;
+                      text-align: center;
+                      font-size: 15px;
+                      @include textOverflow(50px);
+                    }
+                    input[type="checkbox"] {
+                      display: none;
+                    } /* to hide the checkbox itself */
+                    label {
+                      font-size: 20px;
+                    }
+                    input[type="checkbox"] + label:before {
+                      font-family: FontAwesome;
+                      display: inline-block;
+                    }
+
+                    input[type="checkbox"] + label:before {
+                      content: "\f10c";
+                      color: grey;
+                    } /* unchecked icon */
+
+                    input[type="checkbox"]:checked + label:before {
+                      content: "\f05d";
+                      color: $ordinary;
+                    } /* checked icon */
+                    input:checked ~ .task {
+                      opacity: 0.5;
+                      text-decoration: line-through;
+                    }
+                    img {
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      padding-right: 2px;
+                    }
+                  }
+                }
+                //height: 175px;
+                //overflow: auto;
+                // li {
+                //   display: flex;
+                //   padding-top: 3px;
+                //   padding-bottom: 3px;
+                //   border-radius: 10px;
+                //   border-color: $body;
+                //   background-color: $task;
+                //   border-width: 1px;
+                //   border-style: solid;
+                //   margin: 3px 0px 3px 0px;
+                //   align-items: center;
+
+                //   /*                            input:checked> li{
+                //                                     border-color:#ddd;
+                //                                 }*/
+
+                //   .task {
+                //     flex-grow: 1;
+                //     text-align: center;
+                //     // opacity: 0.8;
+
+                //     @include textOverflow(50px);
+                //   }
+
+                //   input:checked + .task {
+                //     opacity: 0.5;
+                //     text-decoration: line-through;
+                //   }
+
+                //   img {
+                //     border-radius: 50%;
+                //     width: 35px;
+                //     height: 35px;
+                //     padding-right: 2px;
+                //   }
+                // }
+                li:hover {
+                  background: #ddd;
+                }
+              }
+            }
+          }
+          .add_todo {
+            border-color: #ddd;
+            border-width: 1px;
+            border-style: solid;
+            background-color: $add_todo;
+            float: left;
+            cursor: pointer;
+            width: 220px;
+            height: 280px;
+            margin: 30px 15px;
+            // padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            text-align: center;
+
+            @include breakpoint(small) {
+              margin: 20px 10px;
+              font-size: 14px;
+            }
+
+            @include breakpoint(xsmall) {
+              margin: 10px 5px;
+              font-size: 12px;
+            }
+            h1 {
+              color: white;
+              font-weight: bold;
+              //font-size: 24px;
+            }
+            .form {
+              font-size: 12px;
+              display: flex;
+              flex-direction: column;
+              border: 1px solid white;
+              border-radius: 3px;
+              padding: 15px 10px;
+
+              label {
+                color: white;
+                border-radius: 5px;
+                height: 20px;
+                float: left;
+              }
+              .has-error {
+                color: rgb(233, 19, 37);
+              }
+              input {
+                // width: 65%;
+                // display: flex;
+                height: 25px;
+                padding: 0px;
+                font-size: 14px;
+                border-radius: 0px;
+                border: none;
+                border-radius: 3px;
+              }
+              input::placeholder {
+                font-size: 12px;
+                font-family: "Comic Sans MS", cursive, sans-serif;
+              }
+              span {
+                float: left;
+                color: rgb(233, 19, 37);
+              }
+            }
+
+            .new_h {
+              display: block;
+              background-color: white; /* Green */
+              border-radius: 5px;
+              color: $ordinary;
+              border: none;
+              // padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 12px;
+              float: left;
+              padding: 5px 2px;
+            }
+          }
+
+          .add_todo:hover {
+            background-color: $hover;
+          }
+        }
+      }
+      //}
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $ordinary;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $hover;
+  }
+}

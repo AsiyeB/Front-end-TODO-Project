@@ -1,0 +1,271 @@
+@import "./media_query";
+@import "./colors";
+body {
+  background-color: $body;
+  //font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  .container-signup {
+    display: flex;
+    flex-wrap: wrap;
+    .backgroundContainer {
+      align-items: center;
+      background-image: url("back3.jpg");
+      position: relative;
+      width: 60%;
+      border-radius: 0px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      .title {
+        font-family: Poppins-Bold;
+        font-size: 30px;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    .form-input {
+      background-color: white;
+      width: 40%;
+      float: right;
+      border-radius: 0px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      .title-form {
+        font-family: Poppins-Bold;
+        font-size: 30px;
+        color: black;
+        // text-transform: uppercase;
+        text-align: center;
+        @include breakpoint(small) {
+          font-size: 25px;
+        }
+      }
+      .inputs {
+        padding: 20px;
+        padding-top: 0px;
+        border-radius: 0px;
+        .form-group {
+          margin-bottom: 10px;
+          .label-input {
+            margin-left: 5px;
+            margin-top: 10px;
+          }
+          .input {
+            width: 90%;
+            height: 20px;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            margin: 5px;
+          }
+          /////////////////////////
+          // .popup {
+          //   position: relative;
+          //   display: inline-block;
+          //   cursor: pointer;
+          //   -webkit-user-select: none;
+          //   -moz-user-select: none;
+          //   -ms-user-select: none;
+          //   user-select: none;
+          // }
+
+          // /* The actual popup */
+          // .popuptext {
+          //   visibility: hidden;
+          //   font-size: 14px;
+          //   width: 280px;
+          //   background-color: #feefb3;
+          //   color: #9f6000;
+          //   text-align: center;
+          //   border-radius: 6px;
+          //   padding: 8px 0;
+          //   position: absolute;
+          //   z-index: 1;
+          //   bottom: 40%;
+          //   left: 100%;
+          //   // margin-left: -80px;
+          // }
+
+          // /* Popup arrow */
+          // .popuptext::after {
+          //   content: "";
+          //   position: absolute;
+          //   top: 100%;
+          //   left: 50%;
+          //   margin-left: -5px;
+          //   border-width: 5px;
+          //   border-style: solid;
+          //   border-color: #feefb3 transparent transparent transparent;
+          // }
+
+          // /* Toggle this class - hide and show the popup */
+          // .show {
+          //   visibility: visible;
+          //   -webkit-animation: fadeIn 1s;
+          //   animation: fadeIn 1s;
+          // }
+
+          // /* Add animation (fade in the popup) */
+          // @-webkit-keyframes fadeIn {
+          //   from {
+          //     opacity: 0;
+          //   }
+          //   to {
+          //     opacity: 1;
+          //   }
+          // }
+
+          // @keyframes fadeIn {
+          //   from {
+          //     opacity: 0;
+          //   }
+          //   to {
+          //     opacity: 1;
+          //   }
+          // }
+          // ///////////////////////////
+          .popup {
+            position: relative;
+            display: inline-block;
+            // cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+          /* The actual popup */
+          .popup .popuptext {
+            visibility: hidden;
+            font-size: 14px;
+            width: 280px;
+            background-color: #feefb3;
+            color: #9f6000;
+            // background-color: #FFD2D2;
+            // color: #D8000C;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 40%;
+            left: 100%;
+            // margin-left: -80px;
+          }
+
+          /* Popup arrow */
+          .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #feefb3 transparent transparent transparent;
+          }
+
+          /* Toggle this class - hide and show the popup */
+          .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+          }
+
+          /* Add animation (fade in the popup) */
+          @-webkit-keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          .errorBlank {
+            background: url("vector.jpg") no-repeat scroll;
+            background-position: right;
+            background-size: contain;
+            // border: red;
+            // color: red;
+          }
+          .errorBlank::placeholder {
+            color: rgb(233, 19, 37);
+            opacity: 0.7;
+          }
+          .errorequal {
+            margin-left: 5px;
+            color: red;
+          }
+        }
+        .option {
+          width: 100%;
+          height: 100px;
+          .img {
+            background-image: url(back2.jpg);
+          }
+        }
+
+        .select-sim {
+          width: 200px;
+          height: 100px;
+          line-height: 22px;
+          vertical-align: middle;
+          position: relative;
+          background: white;
+          border: 1px solid #ccc;
+          overflow: hidden;
+          .options {
+            background: white;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 200px;
+            height: 200px;
+            overflow-y: scroll;
+          }
+          .option {
+            overflow: hidden;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+          }
+        }
+
+        // .select-sim .options .option input {
+        //   width: 0;
+        //   height: 0;
+        //   overflow: hidden;
+        //   margin: 0;
+        //   padding: 0;
+        //   float: left;
+        //   display: inline-block;
+        //   /* fix specific for Firefox */
+        //   position: absolute;
+        //   left: -10000px;
+        // }
+        .signup {
+          padding: 10px;
+          width: 80%;
+          margin-left: 9%;
+          border: 0px;
+          box-sizing: border-box;
+          background-color: $all_done;
+          color: white;
+        }
+      }
+    }
+  }
+}

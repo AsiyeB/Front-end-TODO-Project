@@ -1,0 +1,37 @@
+<template>
+  <require from="./todos-app"></require>
+  <div class="container_todo">
+    <div class="info">
+
+      <div class="board_info">
+        Total Number of ${todos.length} todos.
+      </div>
+
+      <select class="select_board" value.bind="selected_board" change.trigger="information(selected_board.boardid)">
+        <option repeat.for="b of boards" model.bind="b">${b.name}
+        </option>
+      </select>
+
+    </div>
+    <div class="total_todos">
+
+      <todos-app repeat.for="todo of todos" todo.bind="todo" delete-todos.call="deleteTodos(todo.todoid)" update-todos.call="updateTodos(todo.todoid)"></todos-app>
+
+      <div class="add_todo">
+        <h1 show.bind="!click" click.delegate="addTodo()">+</h1>
+        <form if.bind="click" submit.delegate="submit()" class="form">
+          <div class="form-group">
+            <label class="${error? 'has-error' : ''}" for="nameTodo">ToDo Name:</label>
+            <br>
+            <br>
+            <input value.bind="todoName & validate" type="text" id="tname" name="todoname"
+              placeholder="Enter ToDo Name...">
+            <br>
+            <br>
+          </div>
+          <br>
+          <button type="submit" class="new_h" if.bind="click">Submit</button>
+        </form>
+      </div>
+    </div>
+</template>

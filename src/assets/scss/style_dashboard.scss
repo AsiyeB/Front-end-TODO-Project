@@ -1,0 +1,130 @@
+@import "./media_query";
+@import "./colors";
+//@import "./tab";
+body {
+  background-color: $body;
+  //font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  .total {
+    display: flex;
+    justify-content: center;
+    .partToDo {
+      background-color: $container;
+      border: 1px solid white;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      justify-items: center;
+      border-radius: 20px;
+      position: absolute;
+      padding: 30px;
+      width: 90%;
+      .title {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        color: white;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        background-color: $body;
+        border-radius: 15px;
+        border: #000000;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        margin-top: 10px;
+        // min-width: 400px;
+        .boards {
+          background-color: $add_todo;
+          border: $body;
+          border-radius: 15px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding-right: 20px;
+          padding-top: 20px;
+          padding-left: 5px;
+          margin-bottom: 10px;
+          .board {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            //border:1px solid black;
+            background-color: white;
+            width: 220px;
+            height: 350px;
+            padding-top: 10px;
+            padding-right: 15px;
+            padding-bottom: 20px;
+            border-radius: 15px;
+            margin-left: 15px;
+            margin-bottom: 20px;
+            .Done {
+              font-style: oblique;
+              font-size: 35px;
+              line-height: 1.6em;
+              text-align: center;
+              visibility: hidden;
+              color: $all_done;
+            }
+            h {
+              text-align: center;
+              font-style: oblique;
+              font: "Times New Roman", Times, serif;
+              font-size: 22px;
+              line-height: 1.6em;
+            }
+          }
+          .Done_visible {
+            .Done {
+              visibility: visible;
+            }
+          }
+          .dots {
+            flex-wrap: wrap;
+            display: flex;
+            flex-flow: row-reverse;
+            height: 30px;
+            width: 100%;
+            padding-right: 10px;
+            .dot {
+              display: inline-block;
+              height: 30px;
+              width: 30px;
+              background-color: #000000;
+              border-radius: 50%;
+              margin-right: -12.5px;
+            }
+          }
+          .ul{
+            li{
+             margin-right: 5px;
+            }
+          }
+        }
+        .description-box {
+          border: solid $all_done;
+          background-color: $all_done;
+          margin-bottom: 5px;
+          width: 300px;
+          height: max-content;
+          margin-left: 5px;
+          padding-right: 10px;
+          box-sizing: border-box;
+          ul {
+            li {
+              color: #fff0f5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

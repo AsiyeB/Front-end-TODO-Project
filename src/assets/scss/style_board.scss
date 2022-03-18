@@ -1,0 +1,259 @@
+@import "./media_query";
+@import "./colors";
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+//@import "./tab";
+body {
+  background-color: $body;
+  //font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  .total {
+    display: flex;
+    justify-content: center;
+
+    .partToDo {
+      background-color: $container;
+      border: 1px solid white;
+      border-radius: 20px;
+      position: absolute;
+      padding: 30px;
+      width: 90%;
+      .title {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        color: white;
+      }
+
+      .boardss {
+        padding: 10px;
+        margin-top: 10px;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        min-width: 200px;
+        background-color: $body;
+        border-radius: 10px;
+        //margin: 10px;
+        .delete:hover {
+          cursor: pointer;
+        }
+        .delete {
+          // text-align: center;
+          // padding-left: 3px;
+          // align-items: center;
+          float: right;
+        }
+        .delete:before {
+          font-family: FontAwesome;
+          font-size: 24px;
+          content: "\f014";
+          color: black;
+        }
+        .boardProp {
+          @include breakpoint(large) {
+            padding: 0px;
+            margin: 1px;
+          }
+          .update:hover {
+            cursor: pointer;
+          }
+          .update {
+            // text-align: center;
+            padding-left: 3px;
+            align-items: center;
+            padding-right: 3px;
+            padding-top: 2px;
+            float: right;
+          }
+          .update:before {
+            font-family: FontAwesome;
+            font-size: 20px;
+            content: "\f044";
+            color: $all_done;
+          }
+          .updatediv {
+            .updateinput {
+              width: 40%;
+              background-color: $body;
+              display: inline-block;
+              color: $all_done;
+              border: 1px solid $container;
+              border-radius: 4px;
+            }
+            .boardupdate:hover {
+              cursor: pointer;
+            }
+            .boardupdate {
+              width: 10%;
+              // text-align: center;
+              padding-left: 3px;
+              align-items: center;
+              padding-right: 3px;
+              padding-top: 2px;
+              // float: right;
+            }
+            .boardupdate:before {
+              font-family: FontAwesome;
+              font-size: 20px;
+              content: "\f00c";
+              color: $all_done;
+            }
+          }
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex-grow: 1;
+          padding: 3%;
+          width: 50%;
+          height: 250px;
+          min-width: 95px;
+          margin: 10px;
+          // .deleteMem:hover {
+          //   cursor: pointer;
+          // }
+          // .deleteMem {
+          //   padding-left: 3px;
+          //   align-items: center;
+          //   // padding-right: 3px;
+          // }
+          // .deleteMem:before {
+          //   font-family: FontAwesome;
+          //   font-size: 28px;
+          //   content: "\f05c";
+          //   color: #e60000;
+          //   color: grey;
+          // }
+          ul {
+            // margin-left: 2%;
+            // padding: 2%;
+            padding-left: 0;
+            // width: 100%;
+            /*  list-style-position: outside;*/
+            //font-family: "Comic Sans MS", cursive, sans-serif;
+            color: black;
+            li {
+              // width: 95px;
+              // float: left;
+              margin-left: 0px;
+            }
+            .delete:hover {
+              cursor: pointer;
+            }
+            .delete {
+              // text-align: center;
+              // padding-left: 3px;
+              // align-items: center;
+              // padding-right: 3px;
+              margin: 2px;
+              float: left;
+            }
+            .delete:before {
+              font-family: FontAwesome;
+              font-size: 18px;
+              content: "\F05C";
+              color:black;
+            }
+            @include breakpoint(xsmall) {
+              width: 50%;
+              font-size: 13px;
+              margin-left: 0px;
+              list-style-position: unset;
+            }
+          }
+        }
+      }
+      form {
+        display: flex;
+        padding: 2%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        .form-group {
+          float: left;
+          padding: 0.5%;
+          // display: flex;
+          //padding: 2%;
+          // flex-direction: column;
+          // justify-content: center;
+          background-color: transparent;
+          font-family: "Comic Sans MS", cursive, sans-serif;
+          align-items: baseline;
+          @include breakpoint(small) {
+            font-size: 10px;
+            padding: 0px;
+            //size: 100px;
+          }
+          input {
+            border-radius: 5px;
+          }
+          span {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+div {
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.buttonDesign {
+  /*background-image: url("background7.jpg");*/
+  background-color: $ordinary;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 40px;
+  align-items: center;
+  //border-color: white;
+  // @include  breakpoint(small) {
+  //   font-size: 15px;
+  //   padding:0px;
+  //   size: 100px;
+  // }
+}
+.buttonDesign:hover {
+  background-color: $hover;
+  cursor: pointer;
+}
+h3 {
+  margin-left: 5%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: $all_done;
+  @include breakpoint(small) {
+    font-size: 10px;
+    padding: 0px;
+    //size: 100px;
+  }
+}
+// .has-error{
+//   input{
+//       border-color:rgb(243, 102, 87);
+//      // color: red;
+//   }
+// }
+
+/* @media only screen and (max-width:590px) {*/
+
+/*  .boardProp{
+     padding: 0px;
+     margin: 1px;
+   }
+    ul{
+      font-size: 13px;
+      margin-left: 0px;
+      list-style-position: unset;
+    }
+   .buttonDesign{
+    font-size: 15px;
+    padding:0px;
+    size: 5px;
+   }
+  
+}*/

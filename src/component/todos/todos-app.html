@@ -1,0 +1,36 @@
+<template>
+    <require from="./task-app"></require>
+    <div class="todo" id="todo${todo.todoid}">
+        <div class="header ${allDone? 'all_done' : ''}">
+            <span if.bind="!updateClick"> ${todo.header}</span>
+
+            <label class="delete" click.delegate="deleteTodos(todo.todoid)" if.bind="!updateClick"></label>
+            <label class="update" click.delegate="update()" if.bind="!updateClick"></label>
+            <!--  -->
+            <!-- <form if.bind="click" submit.delegate="submit()" class="form"> -->
+            <input class="updateinput" if.bind="updateClick" value.bind="newtodoName" type="text" id="ntname" name="newtodoname">
+            <label if.bind="updateClick" class="todoupdate" click.delegate="updateTodos(todo.todoid)"></label>
+            <!-- </form> -->
+            <!--  -->
+        </div>
+        <div class="todo_container">
+            <form submit.delegate="addTask()">
+                <div class="add_task form-group">
+                    <input type="text" class="textInput ${error? 'empty-error' : ''}" value.bind="newTask & validate"
+                        placeholder="Enter Task Name...">
+                    <span class="add_btn" click.delegate="addTask()">
+                        Add
+                    </span>
+                </div>
+            </form>
+
+            <ul>
+                <task-app repeat.for="task of todo.tasks" task.bind="task" check-done.call="checkDone()"
+                    update-task.call="updateTask(task.taskid)" delete-tasks.call="deleteTasks(task.taskid)"
+                    get-image.call="getImage(task.taskid)" picture.bind="picture">
+                </task-app>
+            </ul>
+
+        </div>
+    </div>
+</template>

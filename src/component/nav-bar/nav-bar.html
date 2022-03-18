@@ -1,0 +1,10 @@
+<template>
+  <div class="tab_board">
+    <div class="butts">
+        <button repeat.for="row of router.navigation" class="${row.isActive ? 'boards' : ''}" data-toggle="collapse"
+        data-target="#navigation-navbar-collapse-1.in" click.delegate="myFunction(row.href)">${row.title}
+      </button>
+    </div>
+    <button style="float: right;"click.delegate="logout()">Logout</button>
+  </div>
+</template>
